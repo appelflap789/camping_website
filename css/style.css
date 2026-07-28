@@ -1,0 +1,403 @@
+/* ===== Base ===== */
+:root {
+  --forest: #2f4a2f;
+  --forest-dark: #1e331e;
+  --moss: #6b8e5a;
+  --cream: #faf7f0;
+  --sand: #f0e9db;
+  --charcoal: #2b2b28;
+  --terracotta: #c96f4a;
+  --terracotta-dark: #a85835;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--charcoal);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 247, 240, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--sand);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--forest);
+  letter-spacing: 0.02em;
+}
+
+.logo span {
+  color: var(--terracotta);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--terracotta);
+}
+
+.btn-tiktok {
+  background: var(--charcoal);
+  color: #fff !important;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.btn-tiktok:hover {
+  background: #000;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(rgba(20, 30, 20, 0.45), rgba(20, 30, 20, 0.55)),
+    url("../images/hero-mountains.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 720px;
+  padding: 4rem 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.15s, background 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--terracotta-dark);
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+  margin-left: 0.75rem;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Sections ===== */
+section {
+  padding: 4.5rem 0;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.section-head h2 {
+  font-size: 2.2rem;
+  color: var(--forest);
+  margin-bottom: 0.6rem;
+}
+
+.section-head p {
+  color: #6b6b64;
+}
+
+/* ===== Gallery grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 14px rgba(40, 50, 40, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(40, 50, 40, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.2rem 1.3rem 1.4rem;
+}
+
+.card-body h3 {
+  font-size: 1.15rem;
+  color: var(--forest);
+  margin-bottom: 0.35rem;
+}
+
+.card-body p {
+  font-size: 0.92rem;
+  color: #6b6b64;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--terracotta);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Shop ===== */
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  height: 260px;
+}
+
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin: 0.6rem 0 1rem;
+}
+
+.price small {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #8a8a82;
+}
+
+.btn-buy {
+  margin-top: auto;
+  text-align: center;
+  background: var(--forest);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-buy:hover {
+  background: var(--forest-dark);
+}
+
+.affiliate-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8a8a82;
+  margin-top: 2.5rem;
+}
+
+/* ===== Split / about section ===== */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.split img {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(40, 50, 40, 0.15);
+}
+
+.split h2 {
+  font-size: 2rem;
+  color: var(--forest);
+  margin-bottom: 1rem;
+}
+
+.split p {
+  margin-bottom: 1rem;
+  color: #55554e;
+}
+
+/* ===== CTA banner ===== */
+.cta-banner {
+  background: linear-gradient(rgba(30, 51, 30, 0.75), rgba(30, 51, 30, 0.85)),
+    url("../images/sunset-peak.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 1.5rem;
+}
+
+.cta-banner h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.cta-banner p {
+  margin-bottom: 1.8rem;
+  opacity: 0.9;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--forest-dark);
+  color: var(--sand);
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+}
+
+footer .socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+footer .socials a {
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+footer .socials a:hover {
+  color: var(--terracotta);
+}
+
+footer p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ===== Page hero (small, for subpages) ===== */
+.page-hero {
+  background: linear-gradient(rgba(20, 30, 20, 0.5), rgba(20, 30, 20, 0.6)),
+    url("../images/misty-valley.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 5.5rem 1.5rem;
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.page-hero p {
+  margin-top: 0.6rem;
+  opacity: 0.92;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 760px) {
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a:not(.btn-tiktok) {
+    font-size: 0.85rem;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-outline {
+    margin-left: 0;
+    margin-top: 0.75rem;
+  }
+}
